@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lillian Mwai - Teaching Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #3498db;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: #3498db;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Qualifications Grid */
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qualification-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline-item {
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #e74c3c;
+        }
+
+        /* Publications */
+        .publications {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 2rem 0;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .contact-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <!-- Replace with your photo -->
+            <img src="https://via.placeholder.com/150" alt="Dr. Lillian Mwai" class="profile-img">
+            <h1>Dr. LILLIAN WANJIRU MWAI</h1>
+            <p class="subtitle">PhD Candidate | Certified Educator | Business & Finance Specialist</p>
+            <div class="contact-info">
+                <p>📧 Email: limwai87@gmail.com | 📞 Phone: +254 721 866 922</p>
+                <p>📍 Location: Nairobi, Kenya | P.O. Box 4477-00100</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#philosophy">Teaching Philosophy</a>
+            <a href="#qualifications">Qualifications</a>
+            <a href="#experience">Experience</a>
+            <a href="#publications">Research</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Teaching Philosophy Section -->
+        <section id="philosophy">
+            <h2>Teaching Philosophy</h2>
+            <div class="philosophy">
+                <p>I believe that education should bridge theory with real-world application, creating meaningful learning experiences that empower students for academic and professional success. My interdisciplinary background in education and finance allows me to bring practical industry insights into the classroom, fostering a holistic approach to teaching.</p>
+                
+                <p>My teaching methodology centers on creating engaging, student-focused environments where critical thinking and innovation thrive. I am passionate about curriculum development that aligns with market demands and equips students with the skills needed in today's evolving professional landscape. Having mentored both undergraduate and postgraduate students, I understand the importance of adapting teaching strategies to diverse learning styles and needs.</p>
+
+                <p>My ongoing PhD research in financial strategies for institutional sustainability reflects my commitment to research that addresses real-world challenges, a perspective I integrate into my teaching to inspire future scholars and professionals.</p>
+            </div>
+        </section>
+
+        <!-- Qualifications Section -->
+        <section id="qualifications">
+            <h2>Credentials & Qualifications</h2>
+            <div class="qualifications-grid">
+                <div class="qualification-card">
+                    <h3>Education</h3>
+                    <ul>
+                        <li><strong>PhD Candidate in Business Administration & Management</strong><br>
+                            Mount Kenya University (2014-Present)</li>
+                        <li><strong>Master of Banking and Finance (Microfinance)</strong><br>
+                            Moi University (2011) - Second Class Honors</li>
+                        <li><strong>Bachelor of Education (Arts)</strong><br>
+                            Kenyatta University (2003) - Second Class Honors (Upper Division)</li>
+                        <li><strong>Kenya Certificate of Secondary Education</strong><br>
+                            Nakuru High School (1998) - Mean Grade B- (Minus)</li>
+                    </ul>
+                </div>
+                
+                <div class="qualification-card">
+                    <h3>Professional Certifications</h3>
+                    <ul>
+                        <li>Certified Public Secretary (CPS 1 & 2) - KASNEB</li>
+                        <li>Kenya Accounting Technician Certificate</li>
+                        <li>Advanced Risk Management Certification</li>
+                        <li>Operational Efficiency & Quality Control Training</li>
+                    </ul>
+                </div>
+                
+                <div class="qualification-card">
+                    <h3>Specialized Expertise</h3>
+                    <ul>
+                        <li>Business & Finance Education</li>
+                        <li>Curriculum Development</li>
+                        <li>Strategic Management</li>
+                        <li>Microfinance & Banking</li>
+                        <li>Research Methodology</li>
+                        <li>Educational Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Part-Time Lecturer <span class="badge">Current</span></h3>
+                    <p><strong>Mount Kenya University</strong> | Nairobi, Kenya | 2020 – Present</p>
+                    <ul>
+                        <li>Deliver engaging lectures in Banking and Finance to undergraduate and postgraduate students</li>
+                        <li>Develop comprehensive course materials aligned with industry standards</li>
+                        <li>Mentor students in academic research and professional development</li>
+                        <li>Contribute to curriculum development and academic program enhancement</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Marketing Manager</h3>
+                    <p><strong>Haute Suites</strong> | Nairobi, Kenya | 2014 – Present</p>
+                    <ul>
+                        <li>Develop and implement strategic marketing approaches for real estate</li>
+                        <li>Drive business expansion through client acquisition and relationship management</li>
+                        <li>Recruit, train, and mentor high-performing sales teams</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Manager, Business Support Services</h3>
+                    <p><strong>Co-operative Bank of Kenya</strong> | Nairobi, Kenya | 2012 – 2014</p>
+                    <ul>
+                        <li>Orchestrated testing processes and quality assurance validation</li>
+                        <li>Centralized operations to enhance branch efficiency</li>
+                        <li>Delivered comprehensive staff training on new banking systems</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Customer Service Manager</h3>
+                    <p><strong>Co-operative Bank of Kenya</strong> | Nairobi, Kenya | 2011 – 2012</p>
+                    <ul>
+                        <li>Managed key relationships with Cooperative Societies and SMEs</li>
+                        <li>Forged partnerships with multiple SACCOs driving business growth</li>
+                        <li>Championed customer-centric culture and service excellence</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Research & Publications</h2>
+            <div class="publications">
+                <div class="publication-item">
+                    <h4>Assessment of Micro Financial Institution Funding on the Performance of Small and Medium-Sized Enterprises in Muranga County</h4>
+                    <p><strong>Academic Research</strong> | Focus: Microfinance, SME Development</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h4>Determinants of Access to Credit from Micro Finance Institutions: A Case Study of Nairobi CBD</h4>
+                    <p><strong>Academic Research</strong> | Focus: Credit Access, Financial Inclusion</p>
+                </div>
+
+                <div class="publication-item">
+                    <h4>PhD Research: Financial Strategies for Institutional Sustainability</h4>
+                    <p><strong>Doctoral Dissertation</strong> | Mount Kenya University (In Progress)</p>
+                    <p>Focus: Developing financial models to enhance long-term institutional viability and growth</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem;">Professional Development</h3>
+            <ul>
+                <li>Powerplay Empowerment for Enhanced Customer Service</li>
+                <li>Advanced Risk Management Training</li>
+                <li>Operational Efficiency & Quality Control</li>
+                <li>IPO Process Management</li>
+                <li>Forex Transaction & Lending Principles</li>
+                <li>Budget Planning, Control, and Implementation</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="mailto:limwai87@gmail.com" class="contact-btn">📧 Email Me</a>
+                <a href="tel:+254721866922" class="contact-btn">📞 Call Me</a>
+                <a href="https://wa.me/254721866922" class="contact-btn" target="_blank">💬 WhatsApp</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>References available upon request</strong></p>
+                <p style="margin-top: 1rem;">
+                    <strong>Email:</strong> limwai87@gmail.com<br>
+                    <strong>Phone:</strong> +254 721 866 922<br>
+                    <strong>Address:</strong> P.O. Box 4477-00100, Nairobi, Kenya
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Lillian Wanjiru Mwai - Teaching Portfolio</p>
+            <p>📧 limwai87@gmail.com | 📞 +254 721 866 922</p>
+            <p>Certified Educator | Business & Finance Specialist | Researcher</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const subject = `Portfolio Inquiry from ${name}`;
+            const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+            const mailtoLink = `mailto:limwai87@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
